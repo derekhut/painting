@@ -56,7 +56,7 @@ const ChatBox: React.FC = () => {
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'column' as 'column',
+    flexDirection: 'column' as const,
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
@@ -83,7 +83,7 @@ const styles = {
     borderRadius: '4px',
     border: '1px solid #ccc',
     width: '300px',
-    textAlign: 'left' as 'left',
+    textAlign: 'left' as const,
   },
 };
 

@@ -70,7 +70,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
   },
   content: {
-    textAlign: 'center' as 'center',
+    textAlign: 'center' as const,
     backgroundColor: 'rgba(255, 255, 255, 0.6)', // Change to more transparent white
     padding: '20px',
     borderRadius: '10px',

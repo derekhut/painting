@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 
 const App: React.FC = () => {
   const [input, setInput] = useState('');
-  const [response, setResponse] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
@@ -19,13 +18,6 @@ const App: React.FC = () => {
           onChange={handleInputChange}
           style={styles.input}
           placeholder="Enter your text..."
-        />
-        <input
-          type="text"
-          value={response}
-          readOnly
-          style={styles.response}
-          placeholder="AI response will appear here..."
         />
       </div>
       <div style={styles.content}>
@@ -43,7 +35,7 @@ const App: React.FC = () => {
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'column' as 'column',
+    flexDirection: 'column' as const,
     alignItems: 'center',
     justifyContent: 'flex-start',
     height: '100vh',
@@ -52,7 +44,7 @@ const styles = {
   },
   header: {
     display: 'flex',
-    flexDirection: 'column' as 'column',
+    flexDirection: 'column' as const,
     alignItems: 'flex-start',
     width: '100%',
     padding: '10px',
@@ -64,15 +56,8 @@ const styles = {
     borderRadius: '4px',
     border: '1px solid #ccc',
   },
-  response: {
-    width: '400px',
-    height: '100px',
-    padding: '10px',
-    borderRadius: '4px',
-    border: '1px solid #ccc',
-  },
   content: {
-    textAlign: 'center' as 'center',
+    textAlign: 'center' as const,
     marginTop: 'calc(100vh / 15)', // 移动页面的1/15
     width: '100%',
   },
